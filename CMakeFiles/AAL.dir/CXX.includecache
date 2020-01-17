@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/data_structures/Graph.cpp
+include/Graph.h
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/data_structures/include/Graph.h
+
