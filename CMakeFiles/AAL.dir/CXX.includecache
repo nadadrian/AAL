@@ -50,6 +50,14 @@ Solver.h
 ../../data_structures/Graph.h
 /home/adrian/Desktop/Studia/SemV/AAL/AAL/include/data_structures/Graph.h
 
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/data_structures/Graph.cpp
+../../include/data_structures/Graph.h
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/data_structures/Graph.h
+
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/data_structures/Vertex.cpp
+../../include/data_structures/Vertex.h
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/data_structures/Vertex.h
+
 /home/adrian/Desktop/Studia/SemV/AAL/AAL/src/main.cpp
 iostream
 -
@@ -73,4 +81,30 @@ sstream
 /home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/solver/StudentScheduleSolver.h
 ../include/problem/generators/AcyclicGraphGenerator.h
 /home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/generators/AcyclicGraphGenerator.h
+
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/mappers/StudentScheduleProblemMapper.cpp
+../../include/mappers/StudentScheduleProblemMapper.h
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/mappers/StudentScheduleProblemMapper.h
+../../include/problem/StudentScheduleProblem.h
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/StudentScheduleProblem.h
+
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/problem/StudentScheduleProblem.cpp
+../../include/problem/StudentScheduleProblem.h
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/StudentScheduleProblem.h
+
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/problem/generators/AcyclicGraphGenerator.cpp
+vector
+-
+random
+-
+algorithm
+-
+iostream
+-
+../../../include/problem/generators/AcyclicGraphGenerator.h
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/generators/AcyclicGraphGenerator.h
+
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/problem/solver/StudentScheduleSolver.cpp
+../../../include/problem/solver/StudentScheduleSolver.h
+/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/solver/StudentScheduleSolver.h
 

@@ -2,3 +2,6 @@
 **/AAL
 **/*.out
 **/*.o
+CMakeCache.txt
+cmake-build-debug/
+CMakeFiles/
