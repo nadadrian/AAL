@@ -1,7 +1,10 @@
 **/*.exe
-**/AAL
 **/*.out
 **/*.o
+AAL
 CMakeCache.txt
 cmake-build-debug/
 CMakeFiles/
+Makefile
+cmake_install.cmake
+.idea/
