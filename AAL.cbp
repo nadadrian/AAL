@@ -66,13 +66,58 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/Graph.h">
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/data_structures/Edge.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/data_structures/Graph.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/data_structures/Vertex.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/mappers/AbstractProblemMapper.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/mappers/StudentScheduleProblemMapper.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/Problem.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/StudentScheduleProblem.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/generators/AcyclicGraphGenerator.cpp">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/generators/AcyclicGraphGenerator.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/solver/Solver.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/include/problem/solver/StudentScheduleSolver.h">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/data_structures/Edge.cpp">
 			<Option target="AAL"/>
 		</Unit>
 		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/data_structures/Graph.cpp">
 			<Option target="AAL"/>
 		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/data_structures/Vertex.cpp">
+			<Option target="AAL"/>
+		</Unit>
 		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/main.cpp">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/mappers/StudentScheduleProblemMapper.cpp">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/problem/StudentScheduleProblem.cpp">
+			<Option target="AAL"/>
+		</Unit>
+		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/src/problem/solver/StudentScheduleSolver.cpp">
 			<Option target="AAL"/>
 		</Unit>
 		<Unit filename="/home/adrian/Desktop/Studia/SemV/AAL/AAL/CMakeLists.txt">
