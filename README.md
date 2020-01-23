@@ -3,7 +3,7 @@
 #### Prowadzący: dr inż. Paweł Zawistowski
 #### Autor: Adrian Nadratowski
 
-## Struktura projektu: 
+## O strukturze projektu i generowanym programie: 
 - Pliki nagłówkowe znajdują się w folderze `include/`, kod źródłowy znajduje się w folderze `src/`
 - W folderze `docs/` znajdują się dwa pliki .pdf - dokumentacja wstępna i końcowa projektu oraz plik .xslx, w którym
   analizie poddane zostały wyniki testów wydajności algorytmu.
