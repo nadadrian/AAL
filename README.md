@@ -9,8 +9,7 @@
   analizie poddane zostały wyniki testów wydajności algorytmu.
 - W folderze `data/`, w plikach 'test*.txt' znajdują sie przykładowe dane wejściowe dla programu oraz narysowany graf 
   reprezentujący jeden z proponowanych zestawów danych
-- W podfoledrach folderu `/data` - katalogi `solutions` i `results` znajdują się przykładowe wyniki działania programu - odpowiednio
-  znalezione sekwencje przedmiotów oraz wyniki testów wydajnościowych algorytmu  
+- W podfoledrach folderu `/data` - katalogi `solutions/` i `results/` znajdują się przykładowe wyniki działania programu - odpowiednio: znalezione sekwencje przedmiotów oraz wyniki testów wydajnościowych algorytmu  
 - Projekt można skompilować z wykorzystaniem pliku Makefile - polecenie `make all` 
   lub poleceniami: `cmake .` - wygenerowanie plików do budowy projektu,  `cmake --build .` - budowa projektu
 - Wygenerowany w głownym katalogu program (o nazwie 'AAL') można uruchomić w trzech trybach:
