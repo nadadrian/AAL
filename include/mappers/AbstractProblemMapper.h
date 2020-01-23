@@ -12,6 +12,7 @@
 template<class SubjectType>
 class AbstractProblemMapper {
 public:
+    virtual ~AbstractProblemMapper() = default;
     virtual Problem<SubjectType> *mapInputToProblem(std::istream &inputStream) = 0;
 };
 

@@ -16,6 +16,8 @@ typedef Graph SubjectType;
 
 class StudentScheduleSolver : public Solver<SolutionType, SubjectType> {
 public:
+    virtual ~StudentScheduleSolver() = default;
+
     StudentScheduleSolver(Problem<SubjectType> *problem);
 
     SolutionType solve();

@@ -3,3 +3,7 @@
 //
 
 #include "../../include/problem/StudentScheduleProblem.h"
+
+bool StudentScheduleProblem::isNotResolvable() {
+    return !this->subject->hasRootVertexes() && !this->subject->isEmpty();
+}

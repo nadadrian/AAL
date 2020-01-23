@@ -11,6 +11,7 @@
 
 class StudentScheduleProblemMapper : public AbstractProblemMapper<Graph> {
 public:
+    virtual ~StudentScheduleProblemMapper() = default;
     Problem<Graph> *mapInputToProblem(std::istream &inputStream);
 };
 

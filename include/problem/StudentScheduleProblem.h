@@ -9,7 +9,7 @@
 #include "../data_structures/Graph.h"
 
 class StudentScheduleProblem : public Problem<Graph> {
-
+    bool isNotResolvable();
 };
 
 

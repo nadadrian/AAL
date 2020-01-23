@@ -8,9 +8,9 @@
 
 class AcyclicGraphGenerator {
 public:
-    static int** generateGraph(int numberOfVertexes, int numberOfEdges);
-    static int** generateSparseGraph(int numberOfVertexes);
-    static int** generateDenseGraph(int numberOfVertexes);
+    static std::vector<std::vector<int>> generateGraph(int numberOfVertexes, int numberOfEdges);
+    static std::vector<std::vector<int>> generateSparseGraph(int numberOfVertexes);
+    static std::vector<std::vector<int>> generateDenseGraph(int numberOfVertexes);
 };
 
 

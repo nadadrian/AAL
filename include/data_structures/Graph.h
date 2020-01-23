@@ -19,17 +19,17 @@ public:
 
     std::unordered_map<int, Vertex *> &getRootVertexes();
 
-    void addNewVertex(int id);
+    void addVertex(int id);
 
     void removeVertex(int id);
 
     Vertex *getVertex(int id);
 
-    void addDependency(Vertex *fromVertex, Vertex *toVertex);
+    void addEdge(Vertex *fromVertex, Vertex *toVertex);
 
     bool isEmpty();
 
-    bool isNotResolvable();
+    bool hasRootVertexes();
 
     std::pair<int, Vertex*> removeFirstIndependentElement();
 };

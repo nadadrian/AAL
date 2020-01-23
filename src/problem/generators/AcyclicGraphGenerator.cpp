@@ -26,14 +26,12 @@
  *   ---------------------------
  */
 
-int **AcyclicGraphGenerator::generateGraph(int numberOfVertexes, int numberOfEdges) {
+std::vector<std::vector<int>> AcyclicGraphGenerator::generateGraph(int numberOfVertexes, int numberOfEdges) {
     int maxEdgesInDAG = (numberOfVertexes * (numberOfVertexes - 1)) / 2;
-    int **matrix = new int *[numberOfVertexes];
-    for (int i = 0; i < numberOfVertexes; ++i) {
-        matrix[i] = new int[numberOfVertexes];
-        for (int j = 0; j < numberOfVertexes; ++j) {
-            matrix[i][j] = 0;
-        }
+    std::vector<std::vector<int>> matrix = std::vector<std::vector<int>>(numberOfVertexes);
+    for (auto &row: matrix) {
+        row = std::vector<int>(numberOfVertexes);
+        std::fill(row.begin(), row.end(), 0);
     }
 
     if (numberOfEdges == maxEdgesInDAG) {
@@ -67,14 +65,17 @@ int **AcyclicGraphGenerator::generateGraph(int numberOfVertexes, int numberOfEdg
             delete emptyFields;
         }
     }
+    for(auto rowToChoose: rowsToChoose) {
+        delete rowToChoose.second;
+    }
     return matrix;
 }
 
-int **AcyclicGraphGenerator::generateSparseGraph(int numberOfVertexes) {
+std::vector<std::vector<int>> AcyclicGraphGenerator::generateSparseGraph(int numberOfVertexes) {
     return AcyclicGraphGenerator::generateGraph(numberOfVertexes, numberOfVertexes);
 }
 
-int **AcyclicGraphGenerator::generateDenseGraph(int numberOfVertexes) {
+std::vector<std::vector<int>> AcyclicGraphGenerator::generateDenseGraph(int numberOfVertexes) {
     return AcyclicGraphGenerator::generateGraph(numberOfVertexes, (numberOfVertexes * (numberOfVertexes - 1)) / 2);
 }
 

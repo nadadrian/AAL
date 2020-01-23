@@ -13,10 +13,10 @@ Problem<Graph> *StudentScheduleProblemMapper::mapInputToProblem(std::istream &in
     int problemSize;
     inputStream >> problemSize;
     for(int i = 1; i <= problemSize; ++i) {
-        subject -> addNewVertex(i);
+        subject->addVertex(i);
     }
     while (inputStream >> fromIndex >> toIndex) {
-        subject -> addDependency(subject->getVertex(fromIndex), subject->getVertex(toIndex));
+        subject->addEdge(subject->getVertex(fromIndex), subject->getVertex(toIndex));
     }
     problem->setSubject(subject);
     return problem;

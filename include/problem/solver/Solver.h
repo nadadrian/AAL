@@ -13,7 +13,10 @@ class Solver {
 protected:
     Problem<SubjectType> *problem;
     SolutionType solution;
+    bool solved;
 public:
+    virtual ~Solver() = default;
+
     void setProblem(Problem<SubjectType> *problem);
 
     Problem<SubjectType> *getProblem();

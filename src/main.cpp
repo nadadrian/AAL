@@ -17,14 +17,12 @@ void printUsage();
 
 int parseInt(char **argv, int id);
 
-void cleanUpMatrix(int **matrix, int size);
-
 int main(int argc, char **argv) {
-
     if (argc < 3 || (strcmp(argv[1], "-m") != 0 && strcmp(argv[1], "m") != 0)) {
         printUsage();
         return 1;
     }
+
     int chosenMode = parseInt(argv, 2);
     if (chosenMode == -1) {
         printUsage();
@@ -37,13 +35,16 @@ int main(int argc, char **argv) {
             Solver<SolutionType, SubjectType> *solver = new StudentScheduleSolver(problem);
             SolutionType solution = solver->solve();
             for (auto i: solution) {
-                std::cout << i.first << " " << std::endl;
+                std::cout << i.first << " ";
             }
+            std::cout << std::endl;
             solver->cleanUp();
+            delete mapper;
+            delete solver;
             break;
         }
         case 2: {
-            if (argc < 9
+            if (argc < 7
                 || (strcmp(argv[3], "-n") != 0 && strcmp(argv[3], "n") != 0)
                 || (strcmp(argv[5], "-d") != 0 && strcmp(argv[5], "d") != 0)) {
                 printUsage();
@@ -51,28 +52,26 @@ int main(int argc, char **argv) {
             }
             int numberOfVertexes = parseInt(argv, 4);
             std::string density = argv[6];
-            if (numberOfVertexes == -1) {
+            if (numberOfVertexes == -1
+                || (density != "d" && density != "s")) {
                 printUsage();
                 return 1;
             }
-            int **graphAdjacencyMatrix;
-            if (density == "dense") {
+            std::vector<std::vector<int>> graphAdjacencyMatrix;
+            if (density == "d") {
                 graphAdjacencyMatrix = AcyclicGraphGenerator::generateDenseGraph(numberOfVertexes);
-            } else if (density == "sparse") {
-                graphAdjacencyMatrix = AcyclicGraphGenerator::generateSparseGraph(numberOfVertexes);
-            } else {
-                printUsage();
-                return 1;
             }
-            std::cout << numberOfVertexes << std::endl;
+            {
+                graphAdjacencyMatrix = AcyclicGraphGenerator::generateSparseGraph(numberOfVertexes);
+            }
+            std::cout << numberOfVertexes;
             for (int row = 0; row < numberOfVertexes; ++row) {
                 for (int column = 0; column < numberOfVertexes; ++column) {
                     if (graphAdjacencyMatrix[row][column] == 1) {
-                        std::cout << column + 1 << " " << row + 1 << std::endl;
+                        std::cout << std::endl << column + 1 << " " << row + 1;
                     }
                 }
             }
-            cleanUpMatrix(graphAdjacencyMatrix, numberOfVertexes);
             break;
         }
         case 3: {
@@ -94,21 +93,26 @@ int main(int argc, char **argv) {
                 || numberOfProblems == -1
                 || step == -1
                 || numberOfProblemInstances == -1
-                || (density != "dense" && density != "sparse")) {
+                || (density != "d" && density != "s")) {
                 printUsage();
                 return 1;
             }
-
-            std::cout << "index, solution time(milliseconds)" << std::endl;
+            std::vector<std::vector<int>> (*graphGeneratingFunction)(int);
+            std::string graphType = "";
+            if (density == "d") {
+                graphGeneratingFunction = AcyclicGraphGenerator::generateDenseGraph;
+                graphType = "dense";
+            } else {
+                graphGeneratingFunction = AcyclicGraphGenerator::generateSparseGraph;
+                graphType = "sparse";
+            }
+            std::cout << "index, vertexes, solution time(milliseconds), graph type" << std::endl;
+            std::vector<double> summarySolutionsTimes = std::vector<double>(numberOfProblems);
+            std::fill(summarySolutionsTimes.begin(), summarySolutionsTimes.end(), 0);
             for (int iteration = 0, numberOfVertexes = initialNumberOfVertexes;
                  iteration < numberOfProblems; ++iteration, numberOfVertexes += step) {
                 for (int instance = 0; instance < numberOfProblemInstances; ++instance) {
-                    int **graphAdjacencyMatrix;
-                    if (density == "dense") {
-                        graphAdjacencyMatrix = AcyclicGraphGenerator::generateDenseGraph(numberOfVertexes);
-                    } else {
-                        graphAdjacencyMatrix = AcyclicGraphGenerator::generateSparseGraph(numberOfVertexes);
-                    }
+                    std::vector<std::vector<int>> graphAdjacencyMatrix = graphGeneratingFunction(numberOfVertexes);
                     std::stringstream inputStream;
                     inputStream << numberOfVertexes << std::endl;
                     for (int row = 0; row < numberOfVertexes; ++row) {
@@ -118,7 +122,6 @@ int main(int argc, char **argv) {
                             }
                         }
                     }
-                    cleanUpMatrix(graphAdjacencyMatrix, numberOfVertexes);
                     AbstractProblemMapper<SubjectType> *mapper = new StudentScheduleProblemMapper();
                     Problem<SubjectType> *problem = mapper->mapInputToProblem(inputStream);
                     Solver<SolutionType, SubjectType> *solver = new StudentScheduleSolver(problem);
@@ -126,9 +129,22 @@ int main(int argc, char **argv) {
                     SolutionType solution = solver->solve();
                     auto stop = std::chrono::high_resolution_clock::now();
                     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
-                    std::cout << iteration + 1 << "." << instance + 1 << ", " << duration.count() << std::endl;
+                    summarySolutionsTimes[iteration] += duration.count();
+                    std::cout << iteration + 1 << "." << instance + 1 << ", " << numberOfVertexes << ", "
+                              << duration.count() << ", " << graphType << std::endl;
                     solver->cleanUp();
+                    delete mapper;
+                    delete solver;
                 }
+            }
+            std::cout << "Average times: " << std::endl;
+            std::cout << "iteration, vertexes, solution time(milliseconds), graph type" << std::endl;
+            for (int iteration = 0, numberOfVertexes = initialNumberOfVertexes;
+                 iteration < numberOfProblems; ++iteration, numberOfVertexes += step) {
+                std::cout << iteration + 1 << ", " << numberOfVertexes << ", "
+                          << static_cast<int>(summarySolutionsTimes[iteration] / numberOfProblemInstances) << ", "
+                          << graphType
+                          << std::endl;
             }
             break;
         }
@@ -174,12 +190,4 @@ int parseInt(char **argv, int id) {
     } catch (std::exception e) {
         return -1;
     }
-}
-
-void cleanUpMatrix(int **matrix, int size) {
-    std::cout << (size * (size - 1)) / 2 << std::endl;
-    for (int i = 0; i < size; ++i) {
-        delete[] matrix[i];
-    }
-    delete[] matrix;
 }

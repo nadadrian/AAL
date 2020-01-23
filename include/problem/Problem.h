@@ -5,17 +5,22 @@
 #ifndef AAL_PROBLEM_H
 #define AAL_PROBLEM_H
 
-template <class K>
+template<class K>
 class Problem {
 protected:
-    K* subject;
+    K *subject;
 public:
-    K* getSubject();
-    void setSubject(K* subject);
+    virtual ~Problem() = default;
+
+    K *getSubject();
+
+    void setSubject(K *subject);
+
+    virtual bool isNotResolvable() = 0;
 };
 
 template<class K>
-K* Problem<K>::getSubject() {
+K *Problem<K>::getSubject() {
     return this->subject;
 }
 
