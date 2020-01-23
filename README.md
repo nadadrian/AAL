@@ -1,6 +1,5 @@
 # Projekt realizowany w ramach przedmiotu 'Analiza Algorytmów'
 #### Temat projektu: Plan studiów
-#### Prowadzący: dr inż. Paweł Zawistowski
 #### Autor: Adrian Nadratowski
 
 ## O strukturze projektu i generowanym programie: 
