@@ -7,7 +7,7 @@
 
 
 #include <iostream>
-#include "../problem/Problem.h"
+#include "include/problem/Problem.h"
 
 template<class SubjectType>
 class AbstractProblemMapper {

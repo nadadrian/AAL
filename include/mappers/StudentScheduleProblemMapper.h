@@ -6,8 +6,8 @@
 #define AAL_STUDENTSCHEDULEPROBLEMMAPPER_H
 
 
-#include "AbstractProblemMapper.h"
-#include "../data_structures/Graph.h"
+#include "include/mappers/AbstractProblemMapper.h"
+#include "include/data_structures/Graph.h"
 
 class StudentScheduleProblemMapper : public AbstractProblemMapper<Graph> {
 public:

@@ -8,7 +8,7 @@
 
 #include <vector>
 #include "Solver.h"
-#include "../../data_structures/Graph.h"
+#include "include/data_structures/Graph.h"
 
 
 typedef std::vector<std::pair<int, Vertex *>> SolutionType;

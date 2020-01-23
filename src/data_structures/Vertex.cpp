@@ -2,7 +2,7 @@
 // Created by adrian on 17.01.2020.
 //
 
-#include "../../include/data_structures/Vertex.h"
+#include "include/data_structures/Vertex.h"
 
 void Vertex::setId(int id) {
     this->id = id;

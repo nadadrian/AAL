@@ -2,8 +2,8 @@
 // Created by adrian on 18.01.2020.
 //
 
-#include "../../include/mappers/StudentScheduleProblemMapper.h"
-#include "../../include/problem/StudentScheduleProblem.h"
+#include "include/mappers/StudentScheduleProblemMapper.h"
+#include "include/problem/StudentScheduleProblem.h"
 
 Problem<Graph> *StudentScheduleProblemMapper::mapInputToProblem(std::istream &inputStream) {
     auto problem = new StudentScheduleProblem();

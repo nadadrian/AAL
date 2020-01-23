@@ -2,7 +2,7 @@
 // Created by adrian on 17.01.2020.
 //
 
-#include "../../../include/problem/solver/StudentScheduleSolver.h"
+#include "include/problem/solver/StudentScheduleSolver.h"
 
 StudentScheduleSolver::StudentScheduleSolver(Problem<SubjectType> *problem) {
     this->problem = problem;

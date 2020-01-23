@@ -2,7 +2,7 @@
 // Created by adrian on 17.01.2020.
 //
 
-#include "../../include/data_structures/Graph.h"
+#include "include/data_structures/Graph.h"
 
 std::unordered_map<int, Vertex *> &Graph::getVertexes() {
     return this->vertexes;

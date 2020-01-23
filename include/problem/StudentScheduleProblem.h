@@ -6,7 +6,7 @@
 #define AAL_STUDENTSCHEDULEPROBLEM_H
 
 #include "Problem.h"
-#include "../data_structures/Graph.h"
+#include "include/data_structures/Graph.h"
 
 class StudentScheduleProblem : public Problem<Graph> {
     bool isNotResolvable();

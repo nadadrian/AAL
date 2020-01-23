@@ -4,11 +4,11 @@
 #include <chrono>
 #include <cstring>
 #include <sstream>
-#include "../include/problem/StudentScheduleProblem.h"
-#include "../include/mappers/StudentScheduleProblemMapper.h"
-#include "../include/problem/solver/Solver.h"
-#include "../include/problem/solver/StudentScheduleSolver.h"
-#include "../include/problem/generators/AcyclicGraphGenerator.h"
+#include "include/problem/StudentScheduleProblem.h"
+#include "include/mappers/StudentScheduleProblemMapper.h"
+#include "include/problem/solver/Solver.h"
+#include "include/problem/solver/StudentScheduleSolver.h"
+#include "include/problem/generators/AcyclicGraphGenerator.h"
 
 typedef std::vector<std::pair<int, Vertex *>> SolutionType;
 typedef Graph SubjectType;

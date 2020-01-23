@@ -6,7 +6,7 @@
 #include <random>
 #include <algorithm>
 #include <iostream>
-#include "../../../include/problem/generators/AcyclicGraphGenerator.h"
+#include "include/problem/generators/AcyclicGraphGenerator.h"
 
 
 /*

@@ -7,7 +7,7 @@
 
 
 #include <unordered_map>
-#include "Vertex.h"
+#include "include/data_structures/Vertex.h"
 
 
 class Graph {

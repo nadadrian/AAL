@@ -6,7 +6,7 @@
 #define AAL_SOLVER_H
 
 
-#include "../Problem.h"
+#include "include/problem/Problem.h"
 
 template<class SolutionType, class SubjectType>
 class Solver {
