@@ -2,6 +2,7 @@
 **/*.out
 **/*.o
 AAL
+AAL.cbp
 CMakeCache.txt
 cmake-build-debug/
 CMakeFiles/
