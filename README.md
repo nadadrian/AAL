@@ -18,8 +18,8 @@
   dowolną literę/znak inny niż cyfra. Wynikiem działania programu w tym trybie jest uporzadkowana według podanych kryteriów
    (zależności) sekwencja przedmiotów. 
   - `./AAL -m 2 -n [liczba wierzchołków, np. 100] -d [gęstość grafu, 'd' dla gęstego, 's' dla rzadkiego]` - wygeneruje losowy 
-  graf nieskierowany o zadanym rozmiarze i gęstości. Rzadki graf oznacza w tym przypadku graf z liczbą krawędzi równą liczbie wierzchołków,
-  natomiast graf gęsty oznacza graf z liczbą krawędzi równą maksymalnej liczbie krawędzi w grafie nieskierowanym. Wynikiem działania
+  graf skierowany o zadanym rozmiarze i gęstości. Rzadki graf oznacza w tym przypadku graf z liczbą krawędzi równą liczbie wierzchołków,
+  natomiast graf gęsty oznacza graf z liczbą krawędzi równą maksymalnej liczbie krawędzi w grafie skierowanym. Wynikiem działania
   programu w tym trybie są dane gotowe do wykorzystania przy uruchomieniu programu w trybie opisanym wyżej
   - `./AAL -m 3 -n [początkowa liczba wierzchołków, np. 100] -k [liczba problemów do rozwiązania, np. 30] -step 
   [krok zwiększający rozmiar generowanego grafu dla każdej iteracji głównej pęlti programu, np. 50] -r 
